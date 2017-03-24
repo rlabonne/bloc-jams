@@ -28,6 +28,21 @@ var albumMarconi = {
     ]
 };
 
+var kanyeWest = {
+    title: 'Is Crazy',
+    artist: 'Kanye West',
+    label: 'Yeezy',
+    year: '2017',
+    albumArtUrl: 'assets/images/album_covers/14.png',
+    songs: [
+        { title: 'One', duration: '1:01' },
+        { title: 'Two', duration: '2:02' },
+        { title: 'Three', duration: '3:03'},
+        { title: 'Four', duration: '4:04' },
+        { title: 'Five', duration: '5:05'}
+    ]
+};
+
 var createSongRow = function(songNumber, songName, songLength) {
     var template = 
             '<tr class="album-view-song-item">'
@@ -40,13 +55,13 @@ var createSongRow = function(songNumber, songName, songLength) {
         return template;
 };
 
+var albumTitle = document.getElementsByClassName('album-view-title')[0];
+var albumArtist = document.getElementsByClassName('album-view-artist')[0];
+var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
+var albumImage = document.getElementsByClassName('album-cover-art')[0];
+var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+
 var setCurrentAlbum = function(album) {
-    var albumTitle = document.getElementsByClassName('album-view-title')[0];
-    var albumArtist = document.getElementsByClassName('album-view-artist')[0];
-    var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
-    var albumImage = document.getElementsByClassName('album-cover-art')[0];
-    var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
-    
     albumTitle.firstChild.nodeValue = album.title;
     albumArtist.firstChild.nodeValue = album.artist;
     albumReleaseInfo.firstChild.nodeValue = album.year + ' ' + album.label;
@@ -61,5 +76,14 @@ var setCurrentAlbum = function(album) {
 
 window.onload = function() {
     setCurrentAlbum(albumPicasso);
+
+    var albums = [albumPicasso, albumMarconi, kanyeWest];
+    var index = 1;
+    albumImage.addEventListener('click', function(Event) {
+    setCurrentAlbum(albums[index]);
+    index++;
+    if(index == albums.length) {
+        index = 0;
+    }
+    });
 };
- 
