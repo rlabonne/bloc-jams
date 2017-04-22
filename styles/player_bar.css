@@ -7,7 +7,7 @@
     background-color: rgba(255, 255, 255, 0.3);
     z-index: 100;
 }
- 
+
 .player-bar a {
     font-size: 1.1rem;
     vertical-align: middle;
@@ -19,19 +19,19 @@
     cursor: pointer;
     text-decoration: none;
 }
- 
+
 .player-bar .container {
     display: table;
     padding: 0;
     width: 90%;
     min-height: 100%;
 }
- 
+
 .player-bar .control-group {
     display: table-cell;
     vertical-align: middle;
 }
- 
+
 .player-bar .main-controls {
     width: 25%;
     text-align: left;
@@ -41,12 +41,12 @@
 .player-bar .main-controls .previous {
     margin-right: 16.5%;
 }
- 
+
 .player-bar .main-controls .play-pause {
     margin-right: 15%;
     font-size: 1.6rem;
 }
- 
+
 .player-bar .currently-playing {
     width: 50%;
     text-align: center;
@@ -164,16 +164,16 @@
         width: 100%;
         text-align: center;
     }
-    
+
     .player-bar .main-controls,
     .player-bar .volume {
         min-height: 3.5rem;
     }
-    
+
     .player-bar .currently-playing {
         min-height: 2.5rem;
     }
-      
+
     .player-bar .artist-name,
     .player-bar .song-name {
         display: none;
