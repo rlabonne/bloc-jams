@@ -125,7 +125,12 @@ var filterTimeCode = function(timeInSeconds) {
   timeInSeconds = parseFloat(timeInSeconds);
   var wholeSeconds = Math.floor(timeInSeconds % 60);
   var wholeMinutes = Math.floor(timeInSeconds / 60);
-  return wholeMinutes + ":" + wholeSeconds;
+  // return wholeMinutes + ":" + wholeSeconds;
+  if (wholeSeconds < 10) {
+        wholeSeconds = '0' + wholeSeconds;
+    }
+    var encodedTime = wholeMinutes + ':' + wholeSeconds;
+    return encodedTime;
 };
 
 var setCurrentTimeInPlayerBar = function(currentTime) {
