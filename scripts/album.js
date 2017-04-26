@@ -165,16 +165,13 @@ var previousSong = function() {
 };
 
 var togglePlayFromPlayerBar = function() {
+  var currentlyPlayingCell = getSongNumberCell(currentlyPlayingSongNumber);
   if (currentSoundFile.isPaused()) {
-    //$(this).html(pauseButtonTemplate);
-    //$('.song-item-number').html(pauseButtonTemplate);
-    //currentlyPlayingCell.html(pauseButtonTemplate);
+    currentlyPlayingCell.html(pauseButtonTemplate);
     $('.main-controls .play-pause').html(playerBarPauseButton);
     currentSoundFile.play();
   } else {
-    //$(this).html(playButtonTemplate);
-    //$('.song-item-number').html(playButtonTemplate);
-    //currentlyPlayingCell.html(playButtonTemplate);
+    currentlyPlayingCell.html(playButtonTemplate);
     $('.main-controls .play-pause').html(playerBarPlayButton);
     currentSoundFile.pause();
   }
