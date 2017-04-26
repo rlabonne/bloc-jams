@@ -166,11 +166,15 @@ var previousSong = function() {
 
 var togglePlayFromPlayerBar = function() {
   if (currentSoundFile.isPaused()) {
-    $(this).html(pauseButtonTemplate);
+    //$(this).html(pauseButtonTemplate);
+    //$('.song-item-number').html(pauseButtonTemplate);
+    //currentlyPlayingCell.html(pauseButtonTemplate);
     $('.main-controls .play-pause').html(playerBarPauseButton);
     currentSoundFile.play();
   } else {
-    $(this).html(playButtonTemplate);
+    //$(this).html(playButtonTemplate);
+    //$('.song-item-number').html(playButtonTemplate);
+    //currentlyPlayingCell.html(playButtonTemplate);
     $('.main-controls .play-pause').html(playerBarPlayButton);
     currentSoundFile.pause();
   }
